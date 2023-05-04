@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;My Audio Player&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>#song-title {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>button{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #d3d3d3 !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #1a1a1a !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 0 !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 10px !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: 0px !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 7px 12px !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: SwallStudiosDiatype, sans-serif !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 13px !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>line-height: 17px !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: inline-block !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>position: static !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>button{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #d3d3d3 !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #1a1a1a !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>cursor: pointer !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;audio id="myAudio" preload="metadata"&gt;&lt;/audio&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="now-playing"&gt;Now Playing:&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="song-title"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button id="play-pause-btn" class="audio-button" id="audio-player-button"&gt;Play&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>&lt;button id="previous-btn" class="audio-button" id="audio-player-button"&gt;Previous&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>&lt;button id="next-btn" class="audio-button" id="audio-player-button"&gt;Next&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="script.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1">var audioPlayer = document.getElementById('myAudio');</span></p>
+<p class="p1"><span class="s1">var playPauseBtn = document.getElementById('play-pause-btn');</span></p>
+<p class="p1"><span class="s1">var nextBtn = document.getElementById('next-btn');</span></p>
+<p class="p1"><span class="s1">var previousBtn = document.getElementById('previous-btn');</span></p>
+<p class="p1"><span class="s1">var songTitle = document.getElementById('song-title');</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">var songs = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>title: 'Future - The Percocet &amp; Stripper Joint',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>url: 'https://www.dropbox.com/s/nuv81k24fww5d72/Future%20-%20The%20Percocet%20%26%20Stripper%20Joint.mp3?raw=1'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>title: 'Lil Keed - Nameless',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>url: 'https://www.dropbox.com/s/s4w33a208hesild/Nameless.mp3?raw=1'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>title: 'Lil Keed - Make U Proud',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>url: 'https://www.dropbox.com/s/of0u70bhv66nmiz/Make%20U%20Proud.mp3?raw=1'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">];</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">var currentSongIndex = 0;</span></p>
+<p class="p1"><span class="s1">var isPlaying = false;</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">function initializePlayer() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>audioPlayer.src = songs[currentSongIndex].url;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>songTitle.textContent = songs[currentSongIndex].title;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>audioPlayer.addEventListener('ended', playNextSong);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>playPauseBtn.addEventListener('click', togglePlayPause);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>nextBtn.addEventListener('click', playNextSong);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>previousBtn.addEventListener('click', playPreviousSong);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// Set the initial text content of the song title element</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>songTitle.textContent = songs[currentSongIndex].title;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>previousBtn.textContent = "Prev";</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">function togglePlayPause() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (isPlaying) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>audioPlayer.pause();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>isPlaying = false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>playPauseBtn.textContent = 'Play';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>audioPlayer.play();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>isPlaying = true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>playPauseBtn.textContent = 'Pause';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">function playNextSong() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>currentSongIndex++;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (currentSongIndex &gt;= songs.length) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>currentSongIndex = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>audioPlayer.src = songs[currentSongIndex].url;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>songTitle.textContent = songs[currentSongIndex].title;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>audioPlayer.play();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>isPlaying = true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>playPauseBtn.textContent = 'Pause';</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">function playPreviousSong() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>currentSongIndex--;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if (currentSongIndex &lt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>currentSongIndex = songs.length - 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>audioPlayer.src = songs[currentSongIndex].url;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>songTitle.textContent = songs[currentSongIndex].title;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>audioPlayer.play();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>isPlaying = true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>playPauseBtn.textContent = 'Pause';</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">initializePlayer();</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html&gt;</span></p>
+</body>
+</html>
